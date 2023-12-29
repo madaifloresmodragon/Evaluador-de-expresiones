@@ -1,0 +1,127 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/home.css')}}">
+
+<div class="mg mb-madai">
+    <h1>Evaluador de expresiones</h1>
+    <p>Este evaluador de expresiones sustituye un valor específico para cada variable y realiza las operaciones
+        evaluando
+        la expresión dada.</p>
+
+    <p>En una expresión algebraica, las letras, que representan variables, pueden representar números. Cuando
+        sustituimos un
+        valor específico para cada variable y luego realizamos las operaciones, estamos evaluando la expresión.
+        Por lo tanto, esta calculadora evalúa las expresiones por usted. Reemplaza cada letra de la expresión con el
+        valor
+        asignado y luego realiza las operaciones de la expresión usando el orden correcto de las operaciones.
+        Tenga cuidado con los nombres de las variables y su uso en la expresión. Si se equivoca, es probable que obtenga
+        resultados incorrectos.</p>
+        <p>Ejemplo:</p>
+        <p>5a+4.8b --> Valores de variables: a=0.5 b=0.99</p>
+</div>
+
+<div class="m rounded-border">
+
+    <div id="input-area" class="keyboard-hidden middle-col btcf input-group-form">
+        <h3 id="prompt"><label for="expression"><span id="normal-prompt">Evaluar la siguiente expresión ...</span></h3>
+
+        <form id="expresionmat_form">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div class="input-group mb-3">
+                            <input type="text" class="form-control" id="expresionMatematica"
+                                placeholder="Ingresa una expresión matemática"
+                                aria-label="Ingresa una expresión matemática" aria-describedby="button-addon2">
+                            <button class="btn btn-custom" type="button" id="button-ir">Ir</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agrega un elemento para mostrar el resultado -->
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-5">
+                        <div id="resultadoobtenido"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!--AQUI SE ENCUENTRA LA TABLA DE VALORES-->
+            <div class="container mt-5">
+                <h5>Variables</h5>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th scope="col">Nombre de la variable</th>
+                            <th scope="col">Valor de la variable</th>
+                            <th scope="col">Editar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tablaVariables">
+                        <!-- Las filas se agregarán aquí dinámicamente -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- BOTON PARA CALCULAR -->
+            <div class="container mt-4">
+                <div class="row justify-content-end">
+                    <div class="col-md-5">
+                        <button type="button" class="btn btn-custom float-end" id="button-calcular">Calcular</button>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="editModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="editModalLabel">Editar variable</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <!-- Campos de edición -->
+                            <label for="variableValue">Valor de la variable:</label>
+                            <input type="text" class="form-control" id="variableValue" placeholder="Ingresa un valor"
+                                aria-label="Ingresa un valor">
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                            <button type="button" class="btn btn-custom" onclick="guardarCambios()">Guardar
+                                cambios</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+
+    <p id="input-hint">Expresión después de las sustituciones:</p>
+    <p id="input-hint">¿No es lo que tienes en mente? <em>¡Usa paréntesis!</em> Define la variable y asegúrate que
+        se encuentre bien escrito.</p>
+    <div class="container mt-4 mb-madai">
+    </div>
+
+    <h5 id="result-header">Resolución<img id="loading-icon"></h5>
+    <p><small>Los pasos del calculo se muestran:</small></p>
+    <div class="container mt-4 mb-madai">
+        <div id="pasosCalculo"></div>
+    </div>
+
+    <h5 id="result-header">Resultado:<img id="loading-icon"></h5>
+    <div class="container mt-4 mb-madai">
+        <div id="resultadoCalculado"></div>
+    </div>
+
+    <script src="static/js/funcionalidad.js"></script>
+
+</div>
+{% endblock %}

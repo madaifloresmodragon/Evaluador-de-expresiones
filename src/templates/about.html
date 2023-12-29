@@ -1,0 +1,19 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<link rel="stylesheet" href="{{ url_for('static', filename= 'css/about.css')}}">
+
+<div class="jumbotron">
+    <h1 class="display-4">¡Bienvenido Noobsoft!</h1>
+    <p class="lead">Nos alegra que estes aquí. Python es un lenguaje de programación muy interesante, con
+        nuestro
+        programa educativo te traemos una herramienta que te será muy util para mejorar tus conocimientos de una
+        manera
+        divertida y apasionada, lo hicimos especialmente para ti.</p>
+    <hr class="my-4">
+    <p>Pruébalo.</p>
+    <a class="btn btn-custom btn-lg" href="/" role="button">Probar ahora</a>
+</div>
+
+{% endblock %}

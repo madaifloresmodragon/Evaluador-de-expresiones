@@ -1,0 +1,59 @@
+body {
+    background: #ECE9E6;
+    background: -webkit-linear-gradient(to right, #FFFFFF, #ECE9E6);
+    background: linear-gradient(to right, #FFFFFF, #ECE9E6);
+
+    font-family: 'Roboto', sans-serif;
+}
+
+.bg_custom {
+    background-color: #7952b3;
+}
+
+.text-white {
+    color: white !important;
+}
+
+.logo-img {
+    width: 170px;
+    height: auto;
+}
+
+/*Puedes agregar más estilos según tus necesidades */
+.footer {
+    background-color: #c7a7c7; /* Color lila suave */
+    padding: 20px 0; /* Reduce el espacio interno */
+    color: #fff; /* Texto en color blanco */
+    font-size: 14px; /* Tamaño de fuente más pequeño */
+}
+
+.footer h5 {
+    color: #fff; /* Títulos en color blanco */
+    font-weight: normal; /* Reduce el grosor del título */
+    margin-bottom: 15px; /* Espacio inferior para los títulos */
+}
+
+.footer ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer ul li {
+    margin-bottom: 10px;
+}
+
+.footer a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.footer p {
+    font-size: 12px; /* Tamaño de fuente más pequeño para el texto */
+    margin-bottom: 0; /* Elimina el espacio inferior del párrafo */
+}
+
+.bi {
+    font-size: 20px; /* Tamaño de fuente más pequeño para el ícono */
+    vertical-align: middle;
+    margin-right: 5px;
+}
