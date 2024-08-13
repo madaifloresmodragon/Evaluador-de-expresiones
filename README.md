@@ -9,11 +9,6 @@ En una expresión algebraica, las letras, que representan variables, pueden repr
 - Resuelve expresiones matemáticas paso a paso.
 - Devuelve los tipos de variables obtenido en cada paso
 
-## Proyecto realizadp por:
-- Arnold Copa Flores
-- Madai Flores Modragon
-- Ivan Sergio Rivera Vidaurre
-
 
 Enlaces del sitio desplegado:
 - [pythonanywhere](http://madaifm.pythonanywhere.com/)
